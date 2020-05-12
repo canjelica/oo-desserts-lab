@@ -32,9 +32,20 @@ class Cupcake:
     @staticmethod
     def scale_recipe(ingredients, amount):
         """Scale the list of ingredients by the given amount of cupcakes."""  
-        for ingredient in (ingredients):
-           
+        new_ingredients = []
 
+        for ingredient in (ingredients):
+            
+            scaled_ingredient = ingredient[0]
+            scaled_value = ingredient[1] * amount
+            
+            new = (scaled_ingredient, scaled_value)
+            new_ingredients.append(new)
+        
+        return new_ingredients
+            
+
+           
 
 
 
