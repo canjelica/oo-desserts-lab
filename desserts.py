@@ -3,6 +3,7 @@
 
 class Cupcake:
     """A cupcake."""
+    # cache = {}
 
     def __repr__(self):
         """Human-readable printout for debugging."""
@@ -15,6 +16,8 @@ class Cupcake:
             self.flavor = flavor
             self.price = price
             self.qty = qty
+            cls.cache = cache
+        
 
     def add_stock(self, amount):
         """Adds existing stock amount to qty of cupcakes."""
@@ -43,6 +46,19 @@ class Cupcake:
             new_ingredients.append(new)
         
         return new_ingredients
+
+    @classmethod
+    def get_cupcake(cls, name):
+        """Returns a cupcake using data from a file."""
+        
+        if name not in cls.cache:
+            print("Sorry, that cupcake doesn't exist")
+        
+        return cls.cache[name]
+
+
+
+
             
 
            
